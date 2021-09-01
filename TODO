@@ -1,0 +1,6 @@
+- Restyle main page to include an about section and a collection section.
+- Add header with navigation information.
+- Add footer with stylesheet links.
+- Create images folder with actual images of each collectible figure.
+- Add subpages for each figure with info about the date the figure was created and
+  a small about blurb.
