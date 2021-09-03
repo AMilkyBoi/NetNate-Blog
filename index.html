@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>TAMU Among Us Collection</title>
+<title>TAMongUs</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/main.css">
@@ -17,94 +17,494 @@ body, html {
   color: #777;
   line-height: 1.8;
 }
-</style>
 
-<!-- Header -->
-<header class="w3-container w3-center w3-text-black">
-  <h2><b>TAMU Among Us Collection</b></h2>
-</header>
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+  background-image: url('/images/2_garden.png');
+  min-height: 100%;
+}
+
+/* Second image (Portfolio) */
+.bgimg-2 {
+  background-image: url("/images/1_canyon.jpg");
+  min-height: 400px;
+}
+
+/* Third image (Resume) */
+.bgimg-3 {
+  background-image: url("/images/3_mountain.png");
+  min-height: 400px;
+}
+
+/* Fourth image (Contact) */
+.bgimg-4 {
+  background-image: url("/images/8_trees.jpg");
+  min-height: 400px;
+}
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1600px) {
+  .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 {
+    background-attachment: scroll;
+    min-height: 400px;
+  }
+}
+
+.list-element {
+    padding: 20px 20px;
+    display: none;
+}
+
+.list .list-element:nth-child(1) {
+    display: block;
+}
+
+.list .list-element:nth-child(2) {
+    display: block;
+}
+
+.list .list-element:nth-child(3) {
+    display: block;
+}
+
+.list .list-element:nth-child(4) {
+    display: block;
+}
+</style>
+<body class="w3-light-gray">
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large
+    w3-right" href="javascript:void(0);" onclick="toggleFunction()"
+    title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="#home" class="w3-bar-item w3-button"><i class="fa fa-home"></i></a>
+    <a href="#about" class="w3-bar-item w3-button w3-hide-small">
+      <i class="fa fa-user"></i> ABOUT
+    </a>
+    <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small">
+      <i class="fa fa-th-list"></i> PORTFOLIO
+    </a>
+    <a href="#resume" class="w3-bar-item w3-button w3-hide-small">
+      <i class="fa fa-file-text"></i> RESUME
+    </a>
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small">
+      <i class="fa fa-envelope"></i> CONTACT
+    </a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    <a href="#about" class="w3-bar-item w3-button"
+    onclick="toggleFunction()">ABOUT
+  </a>
+    <a href="#portfolio" class="w3-bar-item w3-button"
+    onclick="toggleFunction()">PORTFOLIO
+  </a>
+    <a href="#resume" class="w3-bar-item w3-button"
+    onclick="toggleFunction()">RESUME
+  </a>
+    <a href="#contact" class="w3-bar-item w3-button"
+    onclick="toggleFunction()">CONTACT
+  </a>
+  </div>
+</div>
+
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 w3-display-container" id="home">
+  <div class="w3-display-middle">
+    <span class="w3-center w3-round w3-card w3-padding-large w3-black w3-xlarge
+    w3-animate-opacity">NetNate
+    </span>
+  </div>
+</div>
+
+<!-- Container (About Section) -->
+<div class="w3-auto w3-container w3-padding-32" id="about">
+  <h2 class="w3-center w3-text-black"><b>ABOUT</b></h2>
+  <p class="w3-center"><em>I am a third-year Aerospace Engineering undergraduate
+     student at Texas A&M University, College Station. I have experience with
+     Python, MATLAB, SOLIDWORKS, MS Office, and various aspects of website
+     design. I plan to graduate from Texas A&M University in 2023 with a
+     degree in Aerospace Engineering and enter graduate school to obtain my
+     master's degree.</em>
+  </p>
+  <div class="w3-row">
+    <div class="w3-col m6 w3-center w3-padding-large">
+      <p><b><i class="fa fa-user w3-margin-right"></i>Nathan Phillips</b></p>
+      <img src="/images/9_profile.jpg" class="w3-round w3-card"
+      alt="Photo of Me" style="width:90%">
+    </div>
+
+    <!-- Hide this text on small devices -->
+    <div class="w3-col m6 w3-hide-small w3-padding-large">
+      <div class="w3-center">
+        <p>Welcome to NetNate, my website. I like all sorts of stuff, especially
+           if it's related to the aerospace industry. Some of my interestes
+           include guitar, hiking, travelling, coding, 3D modeling, website
+           design, and reading.
+        </p>
+        <img src="/images/7_shuttle.jpg" style="width:90%"
+        class="w3-round w3-card">
+        <p><em>The Shuttle, its carrier, and the Concorde.</em></p>
+    </div>
+    </div>
+  </div>
+</div>
+
+<!-- Second Parallax Image with Portfolio Text -->
+<div class="bgimg-2 w3-display-container w3-opacity-min" id="portfolio">
+  <div class="w3-display-middle">
+    <span class="w3-xxlarge w3-text-white w3-wide">PORTFOLIO</span>
+  </div>
+</div>
 
 <!-- Container (Portfolio Section) -->
 <div class="w3-auto w3-container w3-padding-32">
-  <h2 class="w3-center"><b>Find Them All!</b></h2>
+  <h2 class="w3-center"><b>MY PROJECTS</b></h2>
 
   <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will
   stack on mobile devices/small screens (100% width) -->
   <div class="w3-row-padding w3-center">
+    <div class="list">
 
-    <div class="w3-col m3">
-      <h4>Classic White</h4>
+    <div class="list-element w3-col m3">
+      <h4>Website</h4>
         <a href="/projects/website.html" rel="noopener noreferrer">
-          <img src="/images/amog.png" width="500px" height="500px"
-          style="cursor:pointer" alt="Amog"
+          <img src="/images/5_website.png" width="500px" height="500px"
+          style="cursor:pointer" alt="Programmed, desinged, and deployed a website"
           class="w3-round w3-image w3-card w3-opacity w3-hover-opacity-off">
         </a>
     </div>
 
-    <div class="w3-col m3">
-      <h4>Classic Cyan</h4>
+    <div class="list-element w3-col m3">
+      <h4>UAV</h4>
         <a href="/projects/uav.html" rel="noopener noreferrer">
-          <img src="/images/amog.png" width="500px" height="500px"
-          style="cursor:pointer" alt="Amog"
+          <img src="/images/4_uav.jpg" width="500px" height="500px"
+          style="cursor:pointer" alt="Designed , 3D printed, and tested a UAV."
           class="w3-round w3-image w3-card w3-opacity w3-hover-opacity-off">
         </a>
     </div>
 
-    <div class="w3-col m3">
-      <h4>Classic Lime</h4>
+    <div class="list-element w3-col m3">
+      <h4>Turbojet</h4>
         <a href="/projects/turbojet.html" rel="noopener noreferrer">
-          <img src="/images/amog.png" width="500px" height="500px"
-          style="cursor:pointer" alt="Amog"
+          <img src="/images/10_turbojet.jpg" width="500px" height="500px"
+          style="cursor:pointer" alt="•	Brainstormed and designed a thermodynamic cycle based on the P&W F100 turbojet."
           class="w3-round w3-image w3-card w3-opacity w3-hover-opacity-off">
         </a>
     </div>
 
-    <div class="w3-col m3">
-      <h4>Classic Blue</h4>
+    <div class="list-element w3-col m3">
+      <h4>Cryptocurrency</h4>
         <a href="/projects/crypto.html" rel="noopener noreferrer">
-          <img src="/images/amog.png" width="500px" height="500px"
-          style="cursor:pointer" alt="Amog"
+          <img src="/images/11_crypto.png" width="500px" height="500px"
+          style="cursor:pointer" alt="Designed , 3D printed, and tested a UAV."
           class="w3-round w3-image w3-card w3-opacity w3-hover-opacity-off">
         </a>
     </div>
 
-    <div class="w3-col m3">
-      <h4>Classic Magenta</h4>
+    <div class="list-element w3-col m3">
+      <h4>Rocketry</h4>
         <a href="/projects/rocketry.html" rel="noopener noreferrer">
-          <img src="/images/amog.png" width="500px" height="500px"
-          style="cursor:pointer" alt="Amog"
+          <img src="/images/12_rocketry.jpg" width="500px" height="500px"
+          style="cursor:pointer" alt="Designed , 3D printed, and tested a UAV."
           class="w3-round w3-image w3-card w3-opacity w3-hover-opacity-off">
         </a>
     </div>
 
-    <div class="w3-col m3">
-      <h4>Classic Black</h4>
+    <div class="list-element w3-col m3">
+      <h4>TensorFlow</h4>
         <a href="/projects/tensorflow.html" rel="noopener noreferrer">
-          <img src="/images/amog.png" width="500px" height="500px"
-          style="cursor:pointer" alt="Amog"
+          <img src="/images/17_tensorflow.png" width="500px" height="500px"
+          style="cursor:pointer" alt="Designed , 3D printed, and tested a UAV."
           class="w3-round w3-image w3-card w3-opacity w3-hover-opacity-off">
         </a>
     </div>
 
-    <div class="w3-col m3">
-      <h4>Classic Brown</h4>
+    <div class="list-element w3-col m3">
+      <h4>Exoplanets</h4>
         <a href="/projects/exoplanets.html" rel="noopener noreferrer">
-          <img src="/images/amog.png" width="500px" height="500px"
-          style="cursor:pointer" alt="Amog"
+          <img src="/images/14_exoplanets.jpg" width="500px" height="500px"
+          style="cursor:pointer" alt="Designed , 3D printed, and tested a UAV."
           class="w3-round w3-image w3-card w3-opacity w3-hover-opacity-off">
         </a>
     </div>
 
-    <div class="w3-col m3">
-      <h4>Classic Yellow</h4>
+    <div class="list-element w3-col m3">
+      <h4>Stocks</h4>
         <a href="/projects/stocks.html" rel="noopener noreferrer">
-          <img src="/images/amog.png" width="500px" height="500px"
-          style="cursor:pointer" alt="Amog"
+          <img src="/images/16_stocks.jpg" width="500px" height="500px"
+          style="cursor:pointer" alt="Designed , 3D printed, and tested a UAV."
+          class="w3-round w3-image w3-card w3-opacity w3-hover-opacity-off">
+        </a>
+    </div>
+
+    <div class="list-element w3-col m3">
+      <h4>Art</h4>
+        <a href="/projects/art.html" rel="noopener noreferrer">
+          <img src="/images/13_art.png" width="500px" height="500px"
+          style="cursor:pointer" alt="Designed , 3D printed, and tested a UAV."
+          class="w3-round w3-image w3-card w3-opacity w3-hover-opacity-off">
+        </a>
+    </div>
+
+    <div class="list-element w3-col m3">
+      <h4>Music</h4>
+        <a href="/projects/music.html" rel="noopener noreferrer">
+          <img src="/images/15_music.jpg" width="500px" height="500px"
+          style="cursor:pointer" alt="Designed , 3D printed, and tested a UAV."
           class="w3-round w3-image w3-card w3-opacity w3-hover-opacity-off">
         </a>
     </div>
 
   </div>
+
+    <button id="loadmore" class="w3-button w3-black w3-section w3-round w3-card">Load More
+    </button>
+
+  </div>
 </div>
 
+<!-- Third Parallax Image with Portfolio Text -->
+<div class="bgimg-3 w3-display-container w3-opacity-min" id="resume">
+  <div class="w3-display-middle">
+    <span class="w3-xxlarge w3-text-white w3-wide">RESUME</span>
+  </div>
+</div>
+
+<!-- Container (Resume Section) -->
+<div class="w3-auto w3-container w3-padding-32">
+  <h2 class="w3-center w3-text-black"><b>MY CREDENTIALS</b></h2>
+  <br>
+
+<div class="w3-row-padding">
+<div class="w3-twothird">
+  <div class="w3-container w3-card w3-white w3-margin-bottom w3-round">
+    <h4><i class="fa fa-id-card w3-margin-right"></i>Work Experience</h4>
+      <div class="w3-container">
+          <h5 class="w3-opacity"><b>Workstation & IT Support Technician</b></h5>
+          <h6 class="w3-opacity"><em>Texas A&M University · Part-Time</em></h6>
+          <h6><i class="fa fa-calendar fa-fw"></i> May - Aug 2021</h6>
+          <hr>
+      </div>
+
+      <div class="w3-container">
+          <h5 class="w3-opacity"><b>Information Technology Student Worker</b></h5>
+          <h6 class="w3-opacity"><em>Bryan ISD · Part-Time</em></h6>
+          <h6><i class="fa fa-calendar fa-fw"></i> May - Aug 2020</h6>
+          <hr>
+      </div>
+
+      <div class="w3-container">
+          <h5 class="w3-opacity"><b>Hardware Repair Technician</b></h5>
+          <h6 class="w3-opacity"><em>The Reynolds and Reynolds Company · Part-Time</em></h6>
+          <h6><i class="fa fa-calendar fa-fw"></i> May - Aug 2019</h6>
+          <p></p>
+      </div>
+  </div>
+
+  <div class="w3-container w3-card w3-white w3-margin-bottom w3-round">
+    <h4><i class="fa fa-graduation-cap w3-margin-right"></i>Education</h4>
+      <div class="w3-container">
+          <h5 class="w3-opacity"><b>Texas A&M University</b></h5>
+          <h6><i class="fa fa-calendar fa-fw"></i> 2019 - 2023</h6>
+          <p class="w3-text-gray">BS, Aerospace Engineering</p>
+          <hr>
+      </div>
+
+      <div class="w3-container">
+          <h5 class="w3-opacity"><b>Blinn College</b></h5>
+          <h6><i class="fa fa-calendar fa-fw"></i> 2017, 2018</h6>
+          <hr>
+      </div>
+
+      <div class="w3-container">
+          <h5 class="w3-opacity"><b>Bryan High School</b></h5>
+          <h6><i class="fa fa-calendar fa-fw"></i> 2016 - 2019</h6>
+          <p></p>
+      </div>
+  </div>
+</div>
+
+<div class="w3-third">
+  <div class="w3-container w3-card w3-white w3-margin-bottom w3-round">
+    <h4><i class="fa fa-handshake-o w3-margin-right"></i>Volunteer Experience</h4>
+      <div class="w3-container">
+          <h5 class="w3-opacity"><b>Member</b></h5>
+          <h6 class="w3-opacity"><em>National Honor Society</em></h6>
+          <h6><i class="fa fa-calendar fa-fw"></i> 2017 - 2019</h6>
+          <p></p>
+      </div>
+  </div>
+
+  <div class="w3-container w3-card w3-white w3-margin-bottom w3-round">
+    <h4><i class="fa fa-lightbulb-o w3-margin-right"></i>Skills</h4>
+      <div class="w3-container">
+          <h5 class="w3-opacity"><b>Python</b></h5>
+      </div>
+
+      <div class="w3-container">
+          <h5 class="w3-opacity"><b>SOLIDWORKS</b></h5>
+      </div>
+
+      <div class="w3-container">
+          <h5 class="w3-opacity"><b>MS Office</b></h5>
+          <p></p>
+      </div>
+  </div>
+
+  <div class="w3-container w3-card w3-white w3-margin-bottom w3-round">
+    <h4><i class="fa fa-trophy w3-margin-right"></i>Honors & Awards</h4>
+      <div class="w3-container">
+          <h5 class="w3-opacity"><b>Dean's Honor Roll x2</b></h5>
+      </div>
+
+      <div class="w3-container">
+          <h5 class="w3-opacity"><b>IB Graduate</b></h5>
+          <p></p>
+      </div>
+  </div>
+
+  <div class="w3-container w3-card w3-white w3-margin-bottom w3-round">
+    <h4><i class="fa fa-book w3-margin-right"></i>Interests</h4>
+      <div class="w3-container">
+          <h5 class="w3-opacity"><b>NASA</b></h5>
+      </div>
+
+      <div class="w3-container">
+          <h5 class="w3-opacity"><b>SpaceX</b></h5>
+          <p></p>
+      </div>
+
+      <div class="w3-container">
+          <h5 class="w3-opacity"><b>Boeing</b></h5>
+          <p></p>
+      </div>
+
+      <div class="w3-container">
+          <h5 class="w3-opacity"><b>Lockheed Martin</b></h5>
+          <p></p>
+      </div>
+
+      <div class="w3-container">
+          <h5 class="w3-opacity"><b>Rocket Lab</b></h5>
+          <p></p>
+      </div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- Fourth Parallax Image with Portfolio Text -->
+<div class="bgimg-4 w3-display-container w3-opacity-min" id="contact">
+  <div class="w3-display-middle">
+    <span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
+  </div>
+</div>
+
+<!-- Container (Contact Section) -->
+<div class="w3-auto w3-container w3-padding-32">
+  <h2 class="w3-center w3-text-black"><b>MY INFO</b></h2>
+
+  <div class="w3-row w3-section">
+    <div class="w3-col m4 w3-container">
+      <br>
+      <img src="/images/6_tamu.jpg" class="w3-round w3-card" style="width:100%">
+      <p class="w3-center"><em>TAMU Campus</em></p>
+    </div>
+
+    <div class="w3-col m8 w3-panel">
+      <div class="w3-large w3-margin-bottom">
+        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> College Station, TX<br>
+        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> nathanphillips4501@gmail.com<br>
+      </div>
+
+      <p class="w3-center"><em>If you have any inquiries, send me a message below:</em></p>
+
+      <form action="https://getform.io/f/f9973340-0324-4eb9-a954-f9ed7be006b7" method="POST">
+        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+          <div class="w3-half">
+            <input class="w3-input w3-border w3-round w3-card" type="text" placeholder="Name" required name="name">
+          </div>
+          <div class="w3-half">
+            <input class="w3-input w3-border w3-round w3-card" type="text" placeholder="Email" required name="email">
+          </div>
+        </div>
+        <input class="w3-input w3-border w3-round w3-card" type="text" placeholder="Message" required name="message">
+        <button class="w3-button w3-black w3-right w3-section w3-round w3-card" type="submit">
+          <i class="fa fa-paper-plane"></i>  Send Message
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+  <div class="w3-xlarge w3-section">
+    <a href="https://www.linkedin.com/in/nathanphillipsaerospace/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+    <a href="https://github.com/AMilkyBoi" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fa fa-github w3-hover-opacity"></i></a>
+  </div>
+  <p>Credit to <a href="https://www.w3schools.com/w3css/default.asp" title="W3Schools" target="_blank" rel="noopener noreferrer" class="w3-hover-text-gray">W3Schools</a>,
+               <a href="https://fonts.google.com/specimen/Lato" title="Lato" target="_blank" rel="noopener noreferrer" class="w3-hover-text-gray">Lato</a>, and
+               <a href="https://fontawesome.com/v5.15/icons?d=gallery&p=2" title="FontAwesome" target="_blank" rel="noopener noreferrer" class="w3-hover-text-gray">FontAwesome</a>.</p>
+</footer>
+
+<script>
+// Create load more button
+const loadmore = document.querySelector('#loadmore');
+    let currentItems = 4;
+    loadmore.addEventListener('click', (e) => {
+        const elementList = [...document.querySelectorAll('.list .list-element')];
+        for (let i = currentItems; i < currentItems + 4; i++) {
+            if (elementList[i]) {
+                elementList[i].style.display = 'block';
+            }
+        }
+        currentItems += 4;
+
+        // Load more button will be hidden after list fully loaded
+        if (currentItems >= elementList.length) {
+            event.target.style.display = 'none';
+        }
+    })
+
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-black";
+    } else {
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-black", "");
+    }
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+</body>
 </html>
